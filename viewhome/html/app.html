@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>libang - Client Lists</title> 
+	
+	<link rel="stylesheet" href="/view/jqueryMobile/jquery.mobile-1.2.0.css" />
+	<link rel="stylesheet" href="/view/jqueryMobile/jquery.mobile-1.2.0-sugon.css" /> 
+	
+		<script src="/view/jqueryMobile/jquery.js"></script>
+		
+		<script src="/view/jqueryMobile/jquery.mobile-1.2.0.js"></script>
+		<script >
+			$(document).ready(function(){
+				var serverUrl = document.location.protocol + "//"+ document.location.host;
+				var iosInstallUrl="/view/install/ios/manifest.plist";
+				var linkurl="itms-services://?action=download-manifest&url="+serverUrl+iosInstallUrl;
+				// alert(linkurl);
+				$("#aIosInstall").attr("href",linkurl);
+			});
+		</script>
+
+</head> 
+<body> 
+
+	<div data-role="page" class="type-interior">
+
+		<div data-role="header" data-theme="b">
+		<h1>移动办公客户端在线安装</h1>
+		
+
+	</div><!-- /header -->
+
+	<div data-role="content">
+		
+		<ul data-role="listview">
+			
+			<li><a href="/view/install/android/libang.apk"  target="_blank" >安卓客户端在线安装 </a></li>
+			<li><a id="aIosInstall" target="_self"  >苹果客户端在线安装 </a></li>
+		</ul>
+
+	</div>
+
+	<div data-role="footer" class="footer-docs" data-theme="c">
+			
+	</div> 
+
+	</div><!-- /page -->
+
+	</body>
+	</html>

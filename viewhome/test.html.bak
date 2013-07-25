@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <script src="/view/js/require2.1.1.js"></script>
+      
+        <script>
+			require.config({
+				 baseUrl: "/view/js/"				
+			});
+            require(
+                ["caculate"],
+                function(caculate,$) {
+                     
+					 var ss=caculate.add(1,2);
+					 alert(ss);
+					 alert(caculate.age);
+                    $("div").bind("scroll",function(){
+						showData();
+					})
+					
+					function showData(){
+						alert($("div").scrollTop())
+					}
+                }
+            );
+		
+        </script>
+	
+    </head>
+    <body>
+        <h1>jQuery+RequireJS Test Page</h1>
+        <p>Tests loading of jquery plugins with require.</p>
+		<DIV ID=oDiv STYLE="position:absolute; width:200px;
+height:100px; overflow:scroll"
+
+<SPAN STYLE="width:250px;height:200px"> . . .</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br> ddd</SPAN></DIV>
+    </body>
+</html>

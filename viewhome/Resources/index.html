@@ -1,0 +1,112 @@
+<html>
+    <head>
+		<script src="resource://localhost/cherry.js"></script>
+		<script src="resource://localhost/cherry_test.js"></script>
+    </head>
+    <body>
+        <b>abc</b>
+        <script type="text/javascript">
+		var SERVER_BASE_URL="http://mobile.sugon.com/view/Resources";
+function TestScriptOperations()
+{
+	var oper1 = new cherry.bridge.ScriptOperation(function () {
+		alert("operation 1");
+	}).dispatch();
+
+	var oper2 = new cherry.bridge.ScriptOperation(function () {
+		alert("operation 2");
+	})
+	oper2.addDependency(oper1);
+	oper2.dispatch();
+
+	var oper3 = new cherry.bridge.ScriptOperation(function () {
+		alert("operation 3");
+	});
+	oper3.addDependency(oper1);
+	oper3.dispatch();
+
+	var oper4 = new cherry.bridge.ScriptOperation(function () {
+		alert("operation 4");
+	})
+	oper4.addDependency(oper2);
+	oper4.addDependency(oper3);
+	oper4.dispatch();
+
+	//cherry.bridge._batchScriptOperations();
+	cherry.bridge.flushOperations();
+}
+
+function TestNativeOperations()
+{
+	var oper1 = new cherry.bridge.NativeOperation('obj1', 'theMethod', ['1']);
+	oper1.dispatch();
+
+	var oper2 = new cherry.bridge.NativeOperation('obj2', 'theMethod', ['2']);
+	oper2.addDependency(oper1);
+	oper2.dispatch();
+
+
+	var oper3 = new cherry.bridge.NativeOperation('obj3', 'theMethod', ['3']);
+	oper3.addDependency(oper1);
+	oper3.dispatch();
+
+	var oper4 = new cherry.bridge.NativeOperation('obj4', 'theMethod', ['4']);
+	oper4.addDependency(oper2);
+	oper4.addDependency(oper3);
+	oper4.dispatch();
+
+	TestFakeFlushOperations();
+}
+
+function TestLogin()
+{
+	var getUserName = new cherry.bridge.NativeOperation('userName', 'getText').dispatch();
+	var getPassword = new cherry.bridge.NativeOperation('password', 'getText').dispatch();
+	var validate = new cherry.bridge.ScriptOperation(function () {
+		var userName = getUserName.returnValue;
+		var password = getPassword.returnValue;
+
+		if (validateUserName(userName)) {
+			if (validatePassword(password)) {
+				doLogin(userName, password);
+			} else {
+				alert("invalid password");
+			}
+		} else {
+			alert("invalid username");
+		}
+	}).addDependency(getUserName).addDependency(getPassword).dispatch();
+
+	cherry.bridge.flushOperations();
+}
+
+function TestMixedOperations()
+{
+    
+	var oper1 = new cherry.bridge.NativeOperation('obj1', 'theMethod', '1').dispatch();
+    
+	var oper2 = new cherry.bridge.ScriptOperation(function (oper) {
+		alert("Hello");
+		oper.returnValue = "abc";
+		oper.stateCode = 0;
+	}).addDependency(oper1).dispatch();
+	var oper3 = new cherry.bridge.NativeOperation('obj3', 'theMethod', '3').addDependency(oper1).dispatch();
+	var oper4 = new cherry.bridge.ScriptOperation(function () {
+		alert(oper2.returnValue + ", " + oper3.returnValue);
+	}).addDependency(oper2).addDependency(oper3).dispatch();
+    
+	cherry.bridge.flushOperations();
+    
+}
+
+// TestScriptOperations();
+// TestNativeOperations();
+// TestMixedOperations();
+var retrieveURL = new cherry.bridge.NativeOperation('application', 'retrieveURL',[SERVER_BASE_URL+'/abc.txt']).dispatch();
+var showContent = new cherry.bridge.ScriptOperation(function (oper) {
+	alert(retrieveURL.returnValue);
+}).addDependency(retrieveURL).dispatch();
+
+        </script>
+    </body>
+</html>

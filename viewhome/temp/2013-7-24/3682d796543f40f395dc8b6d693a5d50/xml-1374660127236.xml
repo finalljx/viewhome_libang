@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html><head><title>协同办公</title><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><link rel="stylesheet" type="text/css" href="/DF_Res/DF_Img_Source/Img_HomePage1/css/Home.css" /><link rel="stylesheet" type="text/css" href="/DF_Res/DF_Img_Source/Img_HomePage1/css/HomeMenu.css" /><script type="text/javascript" src="/Produce/WeboaConfig.nsf/HomeMenuJs" /><script language="JavaScript" type="text/javascript"><![CDATA[
+<!-- 
+function changePassword(){ window.open("/Produce/WeboaConfig.nsf/modifyPasswordForm?openform","更改密码","width=300,height=230");}function setCookie(cookieName,cvalue,expiredays,path){ var expireDate=new Date(); var expireStr=""; if(expiredays!=null) {  expireDate.setTime(expireDate.getTime()+(expiredays*24*3600*1000));  expireStr="; expires="+expireDate.toGMTString(); } pathStr=(path==null)?"; path=/":"; path="+path; document.cookie=cookieName+'='+escape(cvalue)+expireStr+pathStr;}
+// -->
+]]></script><script language="JavaScript" type="text/javascript"><![CDATA[
+<!-- 
+document._domino_target = "_self";
+function _doClick(v, o, t, h) {
+  var form = document._HomeForm;
+  if (form.onsubmit) {
+     var retVal = form.onsubmit();
+     if (typeof retVal == "boolean" && retVal == false)
+       return false;
+  }
+  var target = document._domino_target;
+  if (o.href != null) {
+    if (o.target != null)
+       target = o.target;
+  } else {
+    if (t != null)
+      target = t;
+  }
+  form.target = target;
+  form.__Click.value = v;
+  if (h != null)
+    form.action += h;
+  form.submit();
+  return false;
+}
+// -->
+]]></script></head><body text="#000000" bgcolor="#FFFFFF">
+
+
+
+
+
+
+
+
+<form method="post" action="/Produce/WeboaConfig.nsf/HomeForm?OpenForm&amp;Seq=1" name="_HomeForm">
+<input type="hidden" name="__Click" value="0" /><div style="display:none"> 
+<input name="$$HTMLFrontMatter" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;" /> 
+<input name="DF_DbPath" value="Produce/WeboaConfig.nsf" /> 
+<input name="DF_ImgPath" value="DF_Res/DF_Img_Source/Img_SY" style="display:none" />
+<input name="ITCode" value="admin" style="display:none" />用户语言类型：
+<input name="DF_Ln_Type" value="ZH" id="DF_Ln_Type" style="display:block" />
+页面跳转用到的计算RTF域：
+</div>
+<!-- ====================- 2009年12月21日 余锐 页面打开时，判断有没有父窗口。 增加开始 ====================- -->
+<script language="JavaScript" type="text/javascript"><![CDATA[
+var sUserAgent = navigator.userAgent.toLowerCase();
+var isOpera = sUserAgent.indexOf("opera") > -1;
+var isIE = !isOpera && sUserAgent.indexOf("msie") > -1;
+if(sUserAgent.indexOf("iphone")!=-1 || sUserAgent.indexOf("android")!=-1 ){
+ window.location = "/Produce/DigiFlowMobile.nsf/mainform?openform";
+}else if(!isIE ){
+ window.location = "/Produce/DigiFlowMobile.nsf/mainform?openform";
+}
+/////////////////////////////////////////////////
+// 1、当会话超时的时候，如果用户在框架内操作的话，框架的URL就会自动转向到登陆窗口，当登陆成功以后，就会看见两个Logo，两个菜单这种现象。
+// 这里做的是一个跳转，当页面载入的时候，如果发现当前首页在框架里面，就自动刷新父窗口；
+// 2、之所以把程序写在这里，是为了让浮动框架内的页面刚开始加载，就刷新父窗口，这样可以节省页面打开的时间。如果写到OnLoad里面，就会先把// 浮动框架里面的内容加载完，才会去刷新父窗口。
+/////////////////////////////////////////////////
+try{
+if(parent.fr.document == document){
+parent.location.reload();
+}
+}catch(e){
+//很多时候，用户是直接登陆进来的，所以这里不需要显示错误信息。
+}
+]]></script>
+<!-- ====================- 2009年12月21日 余锐 页面打开时，判断有没有父窗口。 增加结束 ====================- -->
+
+<!-- ============================ 顶部Logo 【开始】 ============================ -->
+
+
+
+<!-- ============================ 顶部Logo 【结束】 ============================ -->
+<!-- ============================ 菜单的背景图片 【开始】 ============================ -->
+
+
+
+<!-- ============================ 菜单的背景图片 【结束】 ============================ -->
+
+
+
+<!-- ============================ 底部版权信息 【开始】 ============================ -->
+
+
+
+<!-- ============================ 底部版权信息 【结束】 ============================ -->
+<table id="tblAll" cellspacing="0" cellpadding="0" width="1002" border="0" align="center" style="margin-top:0;"><tbody><tr><td>
+
+
+
+
+<table cellspacing="0" cellpadding="0" width="100%" height="115" border="0" background="/DF_Res/DF_Img_Source/Img_HomePage1/logoNew.gif"><tbody><tr style="display:none1"><td style="vertical-align:top; padding-left:850px; padding-top:10px;">
+<font class="miaobian">
+&amp;nbsp;&amp;nbsp;OADesigner
+</font>
+</td></tr></tbody></table>
+</td></tr><tr><td height="30">
+<div id="MenuDiv" class="AddEllipsis"><ul id="nav"><li class="top"><a title="" href="/Produce/WeboaConfig.nsf/HomeForm?openForm&amp;login" target="fr" class="top_link"><span>首页</span></a></li><li class="top"><a title="系统标准应用程序清单" href="javascript: void(0);" class="top_link"><span class="down">系统管理</span></a><ul class="sub"><li><a title="组织管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">组织管理</a><ul><li><a title="新组织结构库" href="/Produce/DigiFlowOrgSysMng.nsf/OrgShow_form?OpenForm&amp;login" target="_blank">组织结构管理</a></li></ul></li><li><a title="流程管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">流程管理</a><ul><li><a title="协作流程管理与配置" href="/Produce/ProInd.nsf/FlowManageForm?OpenForm&amp;login" target="_blank">流程及配置管理</a></li></ul></li><li><a title="权限管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">权限管理</a><ul><li><a title="业务授权管理" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thServer=&amp;thDir=Produce&amp;thDb=IndMng.nsf&amp;thView=PsnAgentsListByPsnClassValid&amp;count=17&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;bdoptdesname=有效的业务授权" target="fr">业务授权管理</a></li><li><a title="权限变更管理" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=AuthorityMng.nsf&amp;thView=DocAuthAllChangeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes" target="fr">权限变更管理</a></li></ul></li><li><a title="配置管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">配置管理</a><ul><li><a title="首页配置" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=WeboaConfig.nsf&amp;thView=SetMailView&amp;bdoptdesname=无&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">首页配置</a></li><li><a title="数据库管理" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DBConfig.nsf&amp;thView=ServerConfigView&amp;bdoptdesname=处理中" target="fr">数据库管理</a></li><li><a title="系统菜单" href="/Produce/MenuConfig.nsf/xmlMenu?OpenForm" target="_blank">菜单管理</a></li><li><a title="操作框架配置管理" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DesignTools.nsf&amp;thView=helpsetview&amp;bdoptdesname=帮助&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">视图框架管理</a></li><li><a title="任务及消息管理" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=GeneralMessage.nsf&amp;thView=taskByPsnView&amp;bdoptdesname=个人消息列表&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">任务及消息管理</a></li><li><a title="数据库管理" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowAttaConfig.nsf&amp;thView=AttadbConfigView&amp;bdoptdesname=附件库列表&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">附件库配置</a></li><li><a title="组织人员同步" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowSynchronizeData.nsf&amp;thView=RegPsnLogView&amp;bdoptdesname=处理中" target="fr">组织人员同步</a></li></ul></li><li><a title="应用管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">应用管理</a><ul><li><a title="数据库ACL管理" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowACLSet.nsf&amp;thView=DBPathSetView&amp;bdoptdesname= 数据库ACL管理&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">数据库ACL管理</a></li><li><a title="手机审批管理库" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowMobile.nsf&amp;thView=vwMobileConfig&amp;bdoptdesname=配置视图" target="fr">手机审批管理</a></li></ul></li><li><a title="集成管理" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">集成管理</a><ul><li><a title="DigiChannel For XI" href="javascript: void(0);" class="fly" onmouseover="LeftOrRight(this);">DigiChannel For XI</a><ul><li><a title="配置管理(XI)" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXIConfig.nsf&amp;thView=DC_AppTypeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">配置管理(XI)</a></li><li><a title="日志管理(XI)" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXILog.nsf&amp;thView=DC_AllView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">日志管理(XI)</a></li><li><a title="XI集成模板" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXIExamples.nsf&amp;thView=DC_ComCodeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes" target="fr">XI集成模板</a></li></ul></li></ul></li></ul></li><li class="top"><a title="企业文化" href="javascript: void(0);" class="top_link"><span class="down">企业文化</span></a><ul class="sub"><li><a title="信息发布" href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Application&amp;thDb=DigiFlowInfoPublish.nsf&amp;thView=PublishDoingView&amp;count=16&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&amp;bdoptdesname=%u5BA1%u6279%u4E2D" target="fr">信息发布</a></li></ul></li><li class="top"><a title="个人办公" href="javascript: void(0);" class="top_link"><span class="down">个人办公</span></a><ul class="sub"><li><a title="工作日历" href="/Application/DigiFlowWorkCalendar.nsf/PsnMonCalendarForm?OpenForm&amp;login" target="_blank">工作日历</a></li><li><a title="通讯录" href="/Application/DigiFlowContacts.nsf/TestPhoneForm?OpenForm" target="fr">通讯录</a></li></ul></li><li class="top"><a title="人事管理" href="javascript: void(0);" class="top_link"><span class="down">人事管理</span></a><ul class="sub"><li><a title="请休假申请" href="/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=HR&amp;thDb=LeaveApp.nsf&amp;thView=LeaveApplyDoingView&amp;bdoptdesname=处理中" target="fr">请休假申请</a></li></ul></li></ul></div>
+</td></tr><tr><td width="1002" height="650" id="frtb" valign="top">
+<iframe frameborder="no" scrolling="no" style="overflow:auto;height:100%;width:100%;margin-top:0" name="fr" src="/Produce/WeboaConfig.nsf/HomeStartForm?OpenForm" />
+</td></tr><tr><td height="43" align="center" background="/DF_Res/DF_Img_Source/Img_HomePage1/foot.gif">&amp;copy;2013&amp;nbsp;<span class="CopyRight">立邦投资有限公司</span></td></tr></tbody></table>
+<script language="javascript"><![CDATA[
+//2009年12月21日 余锐 保存当前用户的用户名到客户端Cookie。
+setCookie("myusername","admin",10,"");
+]]></script>
+<input name="RTFGoPage" type="hidden" value="" />
+<input name="cuusernamecn" type="hidden" value="OADesigner" />
+<input name="AllMenu" type="hidden" value="[&lt;ul id=&quot;nav&quot;&gt;&lt;li Class=&quot;top&quot;&gt;&lt;a title=&quot;&quot; href=&quot;/Produce/WeboaConfig.nsf/HomeForm?openForm&amp;login&quot; target=&quot;fr&quot; Class=&quot;top_link&quot;&gt;&lt;span&gt;首页&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;li class=&quot;top&quot;&gt;&lt;a title=&quot;系统标准应用程序清单&quot; href=&quot;javascript: void(0);&quot; class=&quot;top_link&quot;&gt;&lt;span class=&quot;down&quot;&gt;系统管理&lt;/span&gt;&lt;/a&gt;&lt;ul class=&quot;sub&quot;&gt;&lt;li&gt;&lt;a title=&quot;组织管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;组织管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;新组织结构库&quot; href=&quot;/Produce/DigiFlowOrgSysMng.nsf/OrgShow_form?OpenForm&amp;login&quot; target=&quot;_blank&quot; &gt;组织结构管理&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;流程管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;流程管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;协作流程管理与配置&quot; href=&quot;/Produce/ProInd.nsf/FlowManageForm?OpenForm&amp;login&quot; target=&quot;_blank&quot; &gt;流程及配置管理&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;权限管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;权限管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;业务授权管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thServer=&amp;thDir=Produce&amp;thDb=IndMng.nsf&amp;thView=PsnAgentsListByPsnClassValid&amp;count=17&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;bdoptdesname=有效的业务授权&quot; target=&quot;fr&quot; &gt;业务授权管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;权限变更管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=AuthorityMng.nsf&amp;thView=DocAuthAllChangeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&quot; target=&quot;fr&quot; &gt;权限变更管理&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;配置管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;配置管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;首页配置&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=WeboaConfig.nsf&amp;thView=SetMailView&amp;bdoptdesname=无&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;首页配置&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;数据库管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DBConfig.nsf&amp;thView=ServerConfigView&amp;bdoptdesname=处理中&quot; target=&quot;fr&quot; &gt;数据库管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;系统菜单&quot; href=&quot;/Produce/MenuConfig.nsf/xmlMenu?OpenForm&quot; target=&quot;_blank&quot; &gt;菜单管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;操作框架配置管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DesignTools.nsf&amp;thView=helpsetview&amp;bdoptdesname=帮助&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;视图框架管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;任务及消息管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=GeneralMessage.nsf&amp;thView=taskByPsnView&amp;bdoptdesname=个人消息列表&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;任务及消息管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;数据库管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowAttaConfig.nsf&amp;thView=AttadbConfigView&amp;bdoptdesname=附件库列表&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;附件库配置&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;组织人员同步&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowSynchronizeData.nsf&amp;thView=RegPsnLogView&amp;bdoptdesname=处理中&quot; target=&quot;fr&quot; &gt;组织人员同步&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;应用管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;应用管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;数据库ACL管理&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowACLSet.nsf&amp;thView=DBPathSetView&amp;bdoptdesname= 数据库ACL管理&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;数据库ACL管理&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;手机审批管理库&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=Produce&amp;thDb=DigiFlowMobile.nsf&amp;thView=vwMobileConfig&amp;bdoptdesname=配置视图&quot; target=&quot;fr&quot; &gt;手机审批管理&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;集成管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;集成管理&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;DigiChannel For XI&quot; href=&quot;javascript: void(0);&quot; class=&quot;fly&quot; onmouseover=&quot;LeftOrRight(this);&quot;&gt;DigiChannel For XI&lt;/a&gt;&lt;ul&gt;&lt;li&gt;&lt;a title=&quot;配置管理(XI)&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXIConfig.nsf&amp;thView=DC_AppTypeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;配置管理(XI)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;日志管理(XI)&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXILog.nsf&amp;thView=DC_AllView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;日志管理(XI)&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;XI集成模板&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Produce&amp;thDb=DigiChannelXIExamples.nsf&amp;thView=DC_ComCodeView&amp;count=24&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&quot; target=&quot;fr&quot; &gt;XI集成模板&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li class=&quot;top&quot;&gt;&lt;a title=&quot;企业文化&quot; href=&quot;javascript: void(0);&quot; class=&quot;top_link&quot;&gt;&lt;span class=&quot;down&quot;&gt;企业文化&lt;/span&gt;&lt;/a&gt;&lt;ul class=&quot;sub&quot;&gt;&lt;li&gt;&lt;a title=&quot;信息发布&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_form?OpenForm&amp;login&amp;thDir=Application&amp;thDb=DigiFlowInfoPublish.nsf&amp;thView=PublishDoingView&amp;count=16&amp;page=1&amp;checkboxFlag=yes&amp;seeFlag=yes&amp;realwidthflag=yes&amp;bdoptdesname=%u5BA1%u6279%u4E2D&quot; target=&quot;fr&quot; &gt;信息发布&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li class=&quot;top&quot;&gt;&lt;a title=&quot;个人办公&quot; href=&quot;javascript: void(0);&quot; class=&quot;top_link&quot;&gt;&lt;span class=&quot;down&quot;&gt;个人办公&lt;/span&gt;&lt;/a&gt;&lt;ul class=&quot;sub&quot;&gt;&lt;li&gt;&lt;a title=&quot;工作日历&quot; href=&quot;/Application/DigiFlowWorkCalendar.nsf/PsnMonCalendarForm?OpenForm&amp;login&quot; target=&quot;_blank&quot; &gt;工作日历&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a title=&quot;通讯录&quot; href=&quot;/Application/DigiFlowContacts.nsf/TestPhoneForm?OpenForm&quot; target=&quot;fr&quot; &gt;通讯录&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li class=&quot;top&quot;&gt;&lt;a title=&quot;人事管理&quot; href=&quot;javascript: void(0);&quot; class=&quot;top_link&quot;&gt;&lt;span class=&quot;down&quot;&gt;人事管理&lt;/span&gt;&lt;/a&gt;&lt;ul class=&quot;sub&quot;&gt;&lt;li&gt;&lt;a title=&quot;请休假申请&quot; href=&quot;/Produce/DesignTools.nsf/ViewShow_Form?openForm&amp;login&amp;thDir=HR&amp;thDb=LeaveApp.nsf&amp;thView=LeaveApplyDoingView&amp;bdoptdesname=处理中&quot; target=&quot;fr&quot; &gt;请休假申请&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;]" /></form>
+
+
+<data-params><issucceed>true</issucceed><logincode>0</logincode><statuscode>200</statuscode><headers><param name="Server" value="Lotus-Domino" /><param name="Date" value="Wed, 24 Jul 2013 10:02:09 GMT" /><param name="Last-Modified" value="Wed, 24 Jul 2013 10:02:07 GMT" /><param name="Expires" value="Tue, 01 Jan 1980 06:00:00 GMT" /><param name="Content-Type" value="text/html; charset=GB2312" /><param name="Content-Length" value="20005" /><param name="Cache-control" value="no-cache" /></headers><redirects><param name="from" value="http://oaappprd.nipponpaint.com.cn/names.nsf?Login" /><param name="to" value="http://oaappprd.nipponpaint.com.cn/" /></redirects><usertoken><storeid>3682d796543f40f395dc8b6d693a5d50</storeid><userid>oadesigner</userid><username /><authority>true</authority><cookies><cookie name="LtpaToken" domain=".nipponpaint.com.cn" path="/">AAECAzUxRUZBNjFGNTFFRkFEMjdDTj1PQURlc2lnbmVyL089TlBDaGluYRGR2381woE9XmnC1wo9TB+/hx5Y</cookie></cookies></usertoken><message><protocal>http</protocal><url>http://oaappprd.nipponpaint.com.cn/</url><method>get</method><encoding>gb18030</encoding><type>remote</type><source>oaappprd.nipponpaint.com.cn</source><template>digi/loginvalidate.xsl</template><params><param key="Login" name="Login" value="" /><param key="$PublicAccess" name="$PublicAccess" value="1" /><param key="ReasonType" name="ReasonType" value="0" /><param key="Password" name="Password" value="123456" /><param key="Username" name="Username" value="oadesigner" /></params></message></data-params></body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <script src="/view/js/require2.1.1.js"></script>      
+		<script src="/view/js/jquery/jquery-1.8.2.js"></script> 
+		
+        <script>
+			
+       // $.ajax({url:"/view/js/cherryBridge/seed.js",async:false,datatype:"script"});
+		require("/view/js/cherryBridge/seed.js",function(a){});
+		function test(){
+			alert("a");
+			alert(hori.mobile.$.hori.loadPage)
+		}		
+        </script>
+	
+    </head>
+    <body>
+        <h1>jQuery+RequireJS Test Page</h1>
+        <input type="button" onclick="test()" value="click">
+
+    </body>
+</html>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewers>
+	<viewer id="oa" type="remote" source="http://oadev.dawning.com.cn" encoding="gb2312">
+		<!-- 登陆验证 -->
+		<view id="loginvalidate" template="digi/loginvalidate.xsl" encoding="gb18030"/>
+		<!-- 手机待办列表 -->
+		<view id="todosmobile" template="digi/todosmobilelist.xsl" encoding="utf-8">
+		</view>
+		<!-- 代办载入更多 -->
+		<view id="todosmobilesub" template="digi/todosmobilesublist.xsl" encoding="utf-8">
+		</view>
+		<!-- 代办条数，气泡显示 -->
+		<view id="todosnum" template="digi/todosnum.xsl" encoding="utf-8"/>
+		<!-- 代办展示内容 -->
+		<view id="contentmobile" template="digi/mobile/content.xsl">
+			<!-- 源数据是符合标签形式的字符串，转换成真正的字符串（把'<','>' 替换成真正的标签） -->
+			
+			<rule mode="replace" regex="0 " value="0&#160;"/>
+			<rule mode="replace" regex="1 " value="1&#160;"/>
+			<rule mode="replace" regex="2 " value="2&#160;"/>
+			<rule mode="replace" regex="3 " value="3&#160;"/>
+			<rule mode="replace" regex="4 " value="4&#160;"/>
+			<rule mode="replace" regex="5 " value="5&#160;"/>
+			<rule mode="replace" regex="6 " value="6&#160;"/>
+			<rule mode="replace" regex="7 " value="7&#160;"/>
+			<rule mode="replace" regex="8 " value="8&#160;"/>
+			<rule mode="replace" regex="9 " value="9&#160;"/>
+
+			<rule mode="replace" regex="approver=" value="approver='"/>
+			<rule mode="replace" regex="approver=''" value="approver='"/>
+			<rule mode="replace" regex=" approveren=" value="' approveren='"/>
+			<rule mode="replace" regex=" approvetime=" value="' approvetime="/>
+
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+			<rule mode="replace" regex="&amp;gt;" value="&gt;"/>
+						
+			<rule mode="replace" regex="&amp;quot;" value="&quot;"/>
+			<rule mode="replace" regex="&amp;amp;nbsp;" value=""/>
+			<rule mode="replace" regex="&amp;amp;middot;" value=""/>
+			<rule mode="replace" regex="&amp;amp;ldquo;" value=""/>
+			<rule mode="replace" regex="&amp;amp;rdquo;" value=""/>
+			<rule mode="replace" regex="&lt;textarea name=&quot;Fck_HTML&quot;" value="&lt;div name=&quot;Fck_HTML&quot;"/>
+
+			<rule mode="replace" regex="&lt;\!\[CDATA\[" value=""/>
+			<rule mode="replace" regex="\]\]&gt;" value=""/>
+		</view>
+		
+		<!-- 特价审批 -->
+		<view id="ncsoaoajf" template="digi/ncsoa/content.xsl">
+			<!-- 源数据是符合标签形式的字符串，转换成真正的字符串（把'<','>' 替换成真正的标签） -->
+			
+			<rule mode="replace" regex="0 " value="0&#160;"/>
+			<rule mode="replace" regex="1 " value="1&#160;"/>
+			<rule mode="replace" regex="2 " value="2&#160;"/>
+			<rule mode="replace" regex="3 " value="3&#160;"/>
+			<rule mode="replace" regex="4 " value="4&#160;"/>
+			<rule mode="replace" regex="5 " value="5&#160;"/>
+			<rule mode="replace" regex="6 " value="6&#160;"/>
+			<rule mode="replace" regex="7 " value="7&#160;"/>
+			<rule mode="replace" regex="8 " value="8&#160;"/>
+			<rule mode="replace" regex="9 " value="9&#160;"/>
+
+			<rule mode="replace" regex="approver=" value="approver='"/>
+			<rule mode="replace" regex="approver=''" value="approver='"/>
+			<rule mode="replace" regex=" approveren=" value="' approveren='"/>
+			<rule mode="replace" regex=" approvetime=" value="' approvetime="/>
+
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+			<rule mode="replace" regex="&amp;gt;" value="&gt;"/>
+			
+			<rule mode="replace" regex="&amp;quot;" value="&quot;"/>
+			<rule mode="replace" regex="&amp;amp;nbsp;" value=""/>
+			<rule mode="replace" regex="&amp;amp;middot;" value=""/>
+			<rule mode="replace" regex="&amp;amp;ldquo;" value=""/>
+			<rule mode="replace" regex="&amp;amp;rdquo;" value=""/>
+			<rule mode="replace" regex="&lt;textarea name=&quot;Fck_HTML&quot;" value="&lt;div name=&quot;Fck_HTML&quot;"/>
+
+			<rule mode="replace" regex="&lt;\!\[CDATA\[" value=""/>
+			<rule mode="replace" regex="\]\]&gt;" value=""/>
+		</view>>
+		
+		<view id="request" template="digi/mobile/request.xsl" encoding="utf-8">
+			<rule mode="replace" regex="soap:" value=""/>
+			<rule mode="replace" regex="ns1:" value=""/>
+		</view>
+		<view id="request_price" template="digi/mobile/request_price.xsl" encoding="utf-8">
+			<rule mode="replace" regex="soap:" value=""/>
+			<rule mode="replace" regex="ns1:" value=""/>
+		</view>
+        <view id="routing" template="digi/routing.xsl"/>
+
+		<!-- 已办事宜 -->
+		<view id="dones" template="digi/doneslist.xsl" encoding="utf-8"/>
+
+        <view id="forms" template="digi/forms/routing.xsl"/>
+
+		<!-- 发货申请 -->
+		<view id="orderdelivery" template="digi/neworder/orderform.xsl" encoding="utf-8"/>
+		<view id="request_orderdelivery" template="digi/neworder/request_orderdelivery.xsl" encoding="utf-8">
+			<rule mode="replace" regex="soap:" value=""/>
+			<rule mode="replace" regex="ns1:" value=""/>
+		</view>
+		<!-- 个人消息 -->
+		<!-- 未读 -->
+		<view id="messagelist" template="digi/message/list.xsl" encoding="utf-8"/>
+		<!-- 已读 -->
+		<view id="messagereadlist" template="digi/message/readlist.xsl" encoding="utf-8"/>
+		
+		
+		<view id="messagesublist" template="digi/message/sublist.xsl" encoding="utf-8"/>
+		
+		<view id="messagesubreadlist" template="digi/message/subreadlist.xsl" encoding="utf-8"/>
+		<view id="messagecontent" template="digi/message/content.xsl">
+		 
+			<rule mode="replace" regex="0 " value="0&#160;"/>
+			<rule mode="replace" regex="1 " value="1&#160;"/>
+			<rule mode="replace" regex="2 " value="2&#160;"/>
+			<rule mode="replace" regex="3 " value="3&#160;"/>
+			<rule mode="replace" regex="4 " value="4&#160;"/>
+			<rule mode="replace" regex="5 " value="5&#160;"/>
+			<rule mode="replace" regex="6 " value="6&#160;"/>
+			<rule mode="replace" regex="7 " value="7&#160;"/>
+			<rule mode="replace" regex="8 " value="8&#160;"/>
+			<rule mode="replace" regex="9 " value="9&#160;"/>
+			
+			<rule mode="replace" regex="approver=" value="approver='"/>
+			<rule mode="replace" regex=" approveren=" value="' approveren='"/>
+			<rule mode="replace" regex=" approvetime=" value="' approvetime="/>
+
+			<rule mode="replace" regex="&amp;amp;nbsp;" value=" "/>
+		    <rule mode="replace" regex="&amp;nbsp;" value=" "/>
+			<rule mode="replace" regex="&amp;nbsp" value=" "/>
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+		    <rule mode="replace" regex="&amp;gt;" value="&gt;"/>	
+			<rule mode="replace" regex="&lt;\!\[CDATA\[" value=""/>
+			<rule mode="replace" regex="\]\]&gt;" value=""/>
+			<!-- 在转换的时候双引号 被保留了 替换掉 	
+		    <rule mode="replace" regex="&amp;quot;" value=""/>
+			-->		
+			
+			<rule mode="replace" regex="&amp;amp;#49;" value="1"/>
+			<rule mode="replace" regex="&amp;amp;#55;" value="7"/>
+ 			<rule mode="replace" regex="&amp;amp;#8226;" value="*"/>
+        </view>
+		<view id="messagerouting" template="digi/message/routing.xsl"/>
+
+
+
+		<!-- 公文管理 -->
+		<view id="documentlist" template="digi/document/list.xsl" encoding="utf-8"/>
+		<view id="documentsublist" template="digi/document/sublist.xsl" encoding="utf-8"/>
+	    <view id="documentcontent" template="digi/document/content.xsl">
+		
+			<rule mode="replace" regex="0 " value="0&#160;"/>
+			<rule mode="replace" regex="1 " value="1&#160;"/>
+			<rule mode="replace" regex="2 " value="2&#160;"/>
+			<rule mode="replace" regex="3 " value="3&#160;"/>
+			<rule mode="replace" regex="4 " value="4&#160;"/>
+			<rule mode="replace" regex="5 " value="5&#160;"/>
+			<rule mode="replace" regex="6 " value="6&#160;"/>
+			<rule mode="replace" regex="7 " value="7&#160;"/>
+			<rule mode="replace" regex="8 " value="8&#160;"/>
+			<rule mode="replace" regex="9 " value="9&#160;"/>
+
+			<rule mode="replace" regex="approver=" value="approver='"/>
+			<rule mode="replace" regex=" approveren=" value="' approveren="/>
+
+
+			<mode rule="replace" regex="&amp;amp;nbsp;" value=" "/>
+		    <rule mode="replace" regex="&amp;nbsp;" value=" "/>
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+		    <rule mode="replace" regex="&amp;gt;" value="&gt;"/>	
+			<rule mode="replace" regex="&lt;\!\[CDATA\[" value=""/>
+			<rule mode="replace" regex="\]\]&gt;" value=""/>
+			<!-- 在转换的时候双引号 被保留了 替换掉 -->			
+		    <rule mode="replace" regex="&amp;quot;" value=""/>    
+		</view>
+
+
+		<!-- 企业新闻 -->
+		<view id="newslist" template="digi/news/list.xsl" encoding="utf-8"/>
+		<view id="newscontent" template="digi/news/content.xsl" encoding="GB2312">
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+			<rule mode="replace" regex="&amp;gt;" value="&gt;"/>
+			<rule mode="replace" regex="&amp;quot;" value="&quot;"/>
+			<rule mode="replace" regex="&amp;amp;nbsp;" value=""/>
+			<rule mode="replace" regex="&amp;amp;middot;" value=""/>
+			<rule mode="replace" regex="&amp;amp;ldquo;" value=""/>
+			<rule mode="replace" regex="&amp;amp;rdquo;" value=""/>
+			<rule mode="replace" regex="&amp;amp;apos;" value=""/>
+			<rule mode="replace" regex="&amp;apos;" value=""/>
+			<rule mode="replace" regex="&apos;" value=""/>
+			
+			<rule mode="replace" regex="width=&quot;386&quot;" value="width=&quot;240px&quot;"/>
+			<rule mode="replace" regex="width=&amp;quot;386&amp;quot;" value="width=&quot;300px&quot;"/>
+			<rule mode="remove" regex="height=&quot;179&quot;"/>
+			<rule mode="remove" regex="height=&amp;quot;179&amp;quot;"/>
+			<rule mode="replace" regex="http://oadev.dawning.com.cn/" value="/view/oa/newsfile/"/>
+		</view>
+		<!-- 电话查询 -->
+        <view id="phonenumber" template="digi/phonenumber/index.xsl">
+			<rule mode="replace" regex="height:100" value=""/>
+		</view>
+        <view id="phonenumberrequest" template="digi/phonenumber/request.xsl">
+			<rule mode="replace" regex="height:100" value=""/>
+			<rule mode="replace" regex="&amp;lt;" value="&lt;"/>
+			<rule mode="replace" regex="&amp;gt;" value="&gt;"/>
+			<rule mode="replace" regex="&amp;quot;" value="&quot;"/>
+		</view>
+		
+		<view id="file" template="file.jsp"/>
+		
+		<view id="newsfile" template=""/>
+	
+	</viewer>
+
+</viewers>

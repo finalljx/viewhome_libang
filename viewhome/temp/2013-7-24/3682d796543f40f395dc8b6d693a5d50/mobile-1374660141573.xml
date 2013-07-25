@@ -1,0 +1,47 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><html><head><link rel="stylesheet" href="/view/jqueryMobile/jquery.mobile-1.2.0.css"><link rel="stylesheet" href="/view/jqueryMobile/jquery.mobile-1.2.0-sugon.css"><script src="/view/jqueryMobile/jquery.js"></script><script src="/view/jqueryMobile/jquery.mobile-1.2.0.min.js"></script><script src="/view/js/hori.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"></head></html><script src="/view/jqueryMobile/jquery.cookie.js"></script><script>
+					$(document).ready(function(){
+						var hori=$.hori;
+						/*设置标题*/
+						hori.setHeaderTitle("待办");
+					});
+				</script><script>
+					var npage = 1;
+					var ncount = npage+20;
+					function fetch(){
+						$.hori.showLoading();
+						npage = npage+1;
+						var itcode = "oadesigner";
+						var oaServerName=$.cookie("oaServerName");
+						var url = "/view/oamobile/todosmobilesub/Produce/DigiFlowMobile.nsf/agGetMsgViewData?openagent&login&0.47540903102505816&server="+oaServerName+"&dbpath=DFMessage/dfmsg_"+itcode+".nsf&view=vwTaskUnDoneForMobile&thclass=&page="+npage+"&count="+ncount;
+						$.ajax({
+							type: "get", url: url,
+							success: function(response){
+								//$.mobile.hidePageLoadingMsg();
+								$("#more").remove();
+								$("ul").append(response);
+								$("ul").listview('refresh');
+								$.hori.hideLoading();
+							},
+							error:function(response){
+								//$.mobile.hidePageLoadingMsg();
+								$.hori.hideLoading();
+								alert("错误:"+response.responseText);
+							}
+						});
+					}
+				</script></head><body><div id="list" data-role="page" class="type-home"><div data-role="content" align="center"><script>
+							function changepage(url){
+								
+								$.hori.loadPage(url);
+							}
+						</script><ul data-role="listview" data-inset="true"><li><a href="javascript:void(0)" onclick="changepage(encodeURI('/view/oamobile/contentmobile/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=F8A6E6910169680448257BB20036EFA8'))" data-icon="arrow-r" data-iconpos="right"><h3>OA管理员提交了请休假审批,请您尽快处理.</h3><p>
+					时间:<font color="#0080FF">2013/07/24 17:59:59</font>
+					状态:<font color="#0080FF">待办(已查阅)</font></p></a></li><li><a href="javascript:void(0)" onclick="changepage(encodeURI('/view/oamobile/contentmobile/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=483D6CFAC99DF35648257BB20034764F'))" data-icon="arrow-r" data-iconpos="right"><h3>OA管理员提交了请休假审批,请您尽快处理.</h3><p>
+					时间:<font color="#0080FF">2013/07/24 17:31:43</font>
+					状态:<font color="#0080FF">待办(已查阅)</font></p></a></li><li><a href="javascript:void(0)" onclick="changepage(encodeURI('/view/oamobile/contentmobile/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=D7B401B6823E3B6948257BB200337C05'))" data-icon="arrow-r" data-iconpos="right"><h3>OA管理员提交了请休假审批,请您尽快处理.</h3><p>
+					时间:<font color="#0080FF">2013/07/24 17:22:06</font>
+					状态:<font color="#0080FF">待办(已查阅)</font></p></a></li><li><a href="javascript:void(0)" onclick="changepage(encodeURI('/view/oamobile/contentmobile/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=BF511D7B22DCCA6148257BB20032F5DA'))" data-icon="arrow-r" data-iconpos="right"><h3>OA管理员提交了请休假审批,请您尽快处理.</h3><p>
+					时间:<font color="#0080FF">2013/07/24 17:16:35</font>
+					状态:<font color="#0080FF">待办(已查阅)</font></p></a></li><li><a href="javascript:void(0)" onclick="changepage(encodeURI('/view/oamobile/contentmobile/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=D1DC4FD1FA2D4DCF48257BB20031F01C'))" data-icon="arrow-r" data-iconpos="right"><h3>陈庆辉提交了请休假审批,请您尽快处理.</h3><p>
+					时间:<font color="#0080FF">2013/07/24 17:04:51</font>
+					状态:<font color="#0080FF">待办(已查阅)</font></p></a></li><li id="more"><a href="javascript:void(0);" onclick="fetch();" data-icon="none" data-iconpos="none"><div style="width:100%;" align="center"><h3>载入更多</h3></div></a></li></ul><br><br><br></div></div></body></html>

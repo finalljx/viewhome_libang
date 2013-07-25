@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<loopers>
+	<looper>
+	<!--三小时推送轮询一次10800000c
+		<loop template="/jsp/loop.jsp" time="10800000"/>-->
+	</looper>
+</loopers>

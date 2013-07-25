@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html><head><title>请休假申请</title><meta name="viewport" content="user-scalable=yes,width=device-width" /><script language="JavaScript" type="text/javascript"><![CDATA[
+<!-- 
+function DF_SelectPsnForMobile(oParam){ var initParam = {selectMode:"radio",FieldName:"",FieldNameCN:"",FieldNameEN:"",GroupFlag:"no",SelectOrgID:"",OptFieldName:"",callback:""}; if(oParam) $.extend(initParam,oParam); if(initParam.FieldName.length>0){  if(initParam.FieldNameCN.length==0){   initParam.FieldNameCN = initParam.FieldName+"CN";  }  if(initParam.FieldNameEN.length==0){   initParam.FieldNameEN = initParam.FieldName+"EN";  } }  var sUrlParam = $.param(initParam); var sSelectUrl = "/"+$("input[name='DF_DbPath']").val()+"/frmselectpsn?OpenForm&login&"+sUrlParam; window.open(sSelectUrl);}function fSetRejectId(obj){ document.all("FlowGotoNodeID").value=(obj.value)}function ShowFlowMap(){ var sUrlpara = "&appdbpath="+document.all("appdbpath").value; sUrlpara += "&appserver="+document.all("appserver").value; sUrlpara += "&appdocunid="+document.all("appdocunid").value;  window.open("/Produce/DigiFlowScriptCss.nsf/showFlowMapform?openForm&"+sUrlpara+"&date="+Date())}
+// -->
+]]></script><script language="JavaScript" type="text/javascript"><![CDATA[
+<!-- 
+document._domino_target = "_self";
+function _doClick(v, o, t, h) {
+  var form = document._showform;
+  if (form.onsubmit) {
+     var retVal = form.onsubmit();
+     if (typeof retVal == "boolean" && retVal == false)
+       return false;
+  }
+  var target = document._domino_target;
+  if (o.href != null) {
+    if (o.target != null)
+       target = o.target;
+  } else {
+    if (t != null)
+      target = t;
+  }
+  form.target = target;
+  form.__Click.value = v;
+  if (h != null)
+    form.action += h;
+  form.submit();
+  return false;
+}
+// -->
+]]></script><style><![CDATA[
+ .Mobile_ReadOnly_Style[type="text"],.Mobile_ReadOnly_Style[type="textarea"]{
+  border:0;
+  background:none;
+  -webkit-appearance:none;
+}
+/*往后台传值时，遍历所有具有该类样式的元素*/
+.editfield{
+
+}
+/*去掉A标签的下划线*/
+a{text-decoration:none}
+]]></style><link href="/DF_Res/DF_Style_Source/DF_Style_Mobile/jquery.alerts.css" type="text/css" rel="stylesheet" /><link href="/DF_Res/DF_Style_Source/DF_Style_Mobile/df_mobile.css" type="text/css" rel="stylesheet" /></head><body text="#000000" bgcolor="#FFFFFF" onload="loadInfo();//调用扩展方法if(typeof showFormInit!= " undefined="undefined" showforminit="showFormInit" 所有富文本域自适应高度="所有富文本域自适应高度" var="var" alltextarea="document.getElementsByTagName(&quot;textarea&quot;);" for="for" i="0;i">
+
+
+
+
+
+
+<alltextarea.length i="i" var="var" textarea="allTextarea[i];" textarea.style.posheight="textarea.scrollHeight;">
+
+<form method="post" action="/Produce/DigiFlowMobile.nsf/showform?OpenForm&amp;Login&amp;Seq=1&amp;apptype=msg&amp;appserver=OAMSGPRD%2Fnpchina&amp;appdbpath=DFMessage%2Fdfmsg_oadesigner.nsf&amp;appdocunid=483D6CFAC99DF35648257BB20034764F" name="_showform">
+<input type="hidden" name="__Click" value="0" /><div style="display:none"><a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a>&quot;&gt;
+<input name="DF_DbPath" value="Produce/DigiFlowMobile.nsf" />常用意见：
+<textarea name="StRTFMindConfig" id="StRTFMindConfig" rows="7" cols="50">同意！@~@批准! @~@返回再议!@~@请尽快办理!@~@请酌情办理!@~@经审核无误! @~@本单延后处理!@~@请修改后重新提交!@~@敬请相关单位予以协助! @~@测试@~@121212@~@1212343434@~@其他4@~@其他5@~@其他6</textarea>
+
+<!-- 应用数据库相关信息 -->
+应用服务器：oaappprd.nipponpaint.com.cn; 应用数据库路径：HR/LeaveApp.nsf; 应用的表单名：LeaveApplyForm;
+应用文档的UNID:A677A02C47DE001E48257BB2003457D5  应用类型：msg msg:消息;news:新闻公告;空：其他应用,  表单更新域：
+<input name="stupdfields" value="" style="width:450" />
+是否调用ws
+<input name="isUseFlowWS" value="yes" style="width:450" />  WS名称：
+<input name="UseFlowWSName" value="DF_FlowBackTrace" id="UseFlowWSName" style="width:450" />
+选人类型：
+<input name="selectMode" value="checkbox" style="width:450" />
+<!-- 当前用户信息 --> 
+当前用户：OADesigner部门编号：当前用户名：OADesigner部门名称：
+员工编号：当前用户登陆时间：07/24/2013 05:53:33 PM
+<!-- 流程信息 -->
+当前环节信息：
+<input name="TFCurNodeID" value="FlowEndNode" readonly="readonly" id="TFCurNodeID" /><font size="2" face="宋体">
+<input name="$V2AttachmentOptions" value="0" /></font>
+当前作者信息：
+<input name="TFCurNodeAuthors" value="" readonly="readonly" />当前环节名称：
+<input name="TFCurNodeName" value="结束" />
+用于隐藏字段的ID值：
+<input name="HiddenFields" value="" />
+流程经过节点信息：
+<input name="ThisFlowDoneNodes" value=";开始/FlowStartNode;一级审批/FlowNode1" />
+当前环节是否允许驳回选关：
+<input name="TFCurNodeRefuseToFlag" value="no" />
+当前环节作者中文名：
+<input name="TFCurNodeAuthorsCN" value="" />
+附件显示：
+<input name="AttachFlag" value="yes" />
+<input name="AttachDocUnid" value="" />
+<input name="AttachInfo" value="" /> 加载状态：
+<input name="LoadFlag" value="" />
+ 审批意见：
+<textarea name="ThisFlowMindInfoLog" style="width:200px;height:200px" readonly="readonly" rows="15" cols="80"><flowmindinfo><mindinfo approver="&quot;OA管理员&quot;" approveren="&quot;OADesigner&quot; optnameinfo=&quot;&quot; 
+    flownodename=&quot;一级审批&quot; flownodeid=&quot;FlowEndNode&quot;" approvetime="2013/07/24 17:33:43">Xvhjfd</mindinfo></flowmindinfo></textarea>
+ 流转日志：
+<textarea name="ThisFlowTraceInfoLog" class="DF_Flow_TagLog_Style" id="ThisFlowTraceInfoLog" readonly="readonly" rows="15" cols="80"><flowtraceinfo><traceinfo flownodeid="FlowStartNode" flowendtime="2013/07/24 17:30:21" flownodename="开始" flowstarttime="2013-07-24 17:30:21"><traceinfo flownodeid="FlowNode1" flowendtime="2013/7/24 17:33:43" flownodename="一级审批" flowstarttime="2013-07-24 17:30:21"><traceinfo flownodeid="FlowNode2" flowendtime="2013/7/24 17:33:43" flownodename="二级审批" flowstarttime="2013-07-24 17:30:21"><traceinfo flownodeid="FlowNode3" flowendtime="2013/7/24 17:33:43" flownodename="三级审批" flowstarttime="2013-07-24 17:30:21"><traceinfo flownodeid="FlowNode4" flowendtime="2013/7/24 17:33:43" flownodename="四级审核" flowstarttime="2013-07-24 17:30:21"><traceinfo flownodeid="FlowNode5" flowendtime="2013/7/24 17:33:43" flownodename="五级审核" flowstarttime="2013-07-24 17:30:21" /></traceinfo></traceinfo></traceinfo></traceinfo></traceinfo></flowtraceinfo>
+</textarea>
+ 操作日志：
+<textarea name="ThisFlowOptInfoLog" class="DF_Flow_TagLog_Style" id="ThisFlowOptInfoLog" readonly="readonly" rows="15" cols="80"><flowoptinfo><optinfo optname="提交" persons="OA管理员" approver="OA管理员  " tonodeid="FlowNode1" otherinfo="" approveren="" oadesigner="OADesigner" fromnodeid="FlowStartNode" tonodename="一级审批" approvetime="2013-07-24 17:30:21" fromnodename="开始" fromnodenameen="null"><optinfo optname="提交" persons="" approver="OA管理员" tonodeid="FlowEndNode" otherinfo="" approveren="" oadesigner="OADesigner" mobileflag="fromMobile" tonodename="结束" approvetime="2013/07/24 17:33:43" /></optinfo></flowoptinfo>
+</textarea>
+
+是否为单表单多流程：
+<input name="flowkey" value="" />
+不允许审批的环节编号：
+<input name="noapprovenodes" value="" />
+是否加载流程：
+<input name="FlowFlag" value="yes" /> 客户端类型：
+<input name="clienttype" value="mobile" />
+<input name="applyname" value="请休假申请" />扩展JS路径:
+<input name="jscriptpath" value="/Produce/DigiFlowMobileHome.nsf/LeavePhone.js" />
+要提交到的节点ID:
+<input name="FlowGotoNodeID" value="" />
+扩展代理名称：
+<input name="StAgentName" value="" /> 后台流程驱动调用成功后调用
+是否显示选择下一环节标识位：
+<input name="ShowSelectPsnFlag" value="no" /> yes为显示，no为不显示,默认为no
+<p>当前节点状态：
+<input name="TFCurNodeDoOptionState" value="0" id="TFCurNodeDoOptionState" />&quot;0&quot;正常状态；&quot;1&quot;加签中<br />
+上一次提交操作类型：
+<input name="TFCurNodeDoOptionType" value="ZC" id="TFCurNodeDoOptionType" /><br />
+记录当前服务器时间：
+<input name="TFCurDateTime" value="2013/07/24 17:53:33" id="TFCurDateTime" />信息发布相关内容：
+信息发布的正文RTF域：
+</p><div name="Fck_HTML" rows="7" cols="50">
+
+动态域配置信息：
+<textarea name="RtfFieldConfig" rows="7" cols="50"><mobilefieldconfig><fieldentries><fieldentry id="StNo" name="StNo" type="text" title="申请单号" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>QXJSQ2001201307240028</value><text /></fieldentry><fieldentry id="StApplyPsnCN" name="StApplyPsnCN" type="text" title="申请人姓名" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>OA管理员</value><text /></fieldentry><fieldentry id="StAppDate" name="StAppDate" type="text" title="填写日期" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>2013-07-24</value><text /></fieldentry><fieldentry id="StApplyDept" name="StApplyDept" type="text" title="申请人部门" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>PMO&amp;BT</value><text /></fieldentry><fieldentry id="StAppOffice" name="StAppOffice" type="text" title="职称" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>M-高级主任</value><text /></fieldentry><fieldentry id="StAppPost" name="StAppPost" type="text" title="职位" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>区域运维组主管</value><text /></fieldentry><fieldentry id="StLeaveTypeText" name="StLeaveTypeText" type="text" title="请假类型" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>公出</value><text /></fieldentry><fieldentry id="rtfDtableTra" name="rtfDtableTra" type="table" title="出差信息" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value /><text>rtfDtableTra</text></fieldentry><fieldentry id="rtfDtable" name="rtfDtable" type="table" title="请假详细信息" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value /><text>rtfDtable</text></fieldentry><fieldentry id="StApplyLeaveDays" name="StApplyLeaveDays" type="text" title="请假天数" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>2</value><text /></fieldentry><fieldentry id="RtfLeaveReason" name="RtfLeaveReason" type="textarea" title="请假原因" readonly="yes" editnodes="" shownodes="" showthreeflag="no"><value>ads  oamobprd.nipponpaint.com.cn </value><text /></fieldentry></fieldentries></mobilefieldconfig>
+</textarea>
+
+<input type="text" id="InfoTitle" value="" />
+<input type="text" id="InfoAuthor" value="" />
+<input type="text" id="TFCurNodeOneDo" value="(单一签核)" />
+临时作者字段：
+<input name="TFTempAuthors" value="" />
+<input name="TFTempAuthorsCN" value="" />
+<input name="TFTempAuthorsEN" value="" /> 
+<input type="button" onclick="//window.open(" produce="produce" digiflowmobile.nsf="DigiFlowMobile.nsf" frmselectpsn="frmselectpsn" openform="OpenForm" amp="amp" login="login" fieldname="FieldName" df_selectpsnformobile="DF_SelectPsnForMobile" tftempauthors="TFTempAuthors" selectmode="selectMode" checkbox="checkbox" value="选择人员" />
+<p><span><textarea name="rtfmobilertfDtableTra" /><textarea name="rtfmobilertfDtable"><table id="tblListB" class="DF_XTable_Style" width="100%"><tbody><tr jquery1374658227015="56"><td class="DF_XTable_Title_TD_Style" width="5%" jquery1374658227015="58"><q id="DF_030">序号</q></td><td class="DF_XTable_Title_TD_Style" width="8%" jquery1374658227015="59"><q id="DF_031">开始日期</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="60"><q id="DF_032">开始时间</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="61"><q id="DF_033">结束日期</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="62"><q id="DF_034">结束时间</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="63"><q id="DF_033">消息文本</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="64"><q id="DF_034">时间数据的文档编号</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="65"><q id="DF_034">休假小时</q></td></tr><tr class="DF_XTable_TR_Style" jquery1374658227015="57"><td class="DF_XTable_TD_Style" jquery1374658227015="66"><input type="checkbox" />1</td><td class="DF_XTable_TD_Style" align="middle" jquery1374658227015="67">2013-07-24</td><td class="DF_XTable_TD_Style" jquery1374658227015="68" /><td class="DF_XTable_TD_Style" align="middle" jquery1374658227015="69">2013-07-25</td><td class="DF_XTable_TD_Style" jquery1374658227015="70" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="71" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="72" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="73" /></tr></tbody></table></textarea></span></p></div>
+
+<script type="text/javascript" src="/Produce/DigiFlowMobile.nsf/jquery-1.8.2.min.js" />
+<script type="text/javascript" src="/Produce/DigiFlowMobile.nsf/jquery.alerts.js" />
+<script><![CDATA[
+//根据窗口宽度，设置客户端类型
+
+if($(window).width()<500){
+ document.all("clienttype").value="mobile";
+}else{
+ document.all("clienttype").value="pc";
+}
+]]></script>
+<script type="text/javascript" src="/Produce/DigiFlowMobile.nsf/showform.js" />
+<script type="text/javascript" src="/DF_Res/DF_Style_Source/DF_Style_Mobile/js/ShowFormExtend.js" />
+
+
+<div class="DB_BODY"> 
+<div class="DB_BANNER"><div style="font-weight:;padding-top:15px;padding-right:10px;text-align:right;color:white"><a id="ahome" href="javascript:goHome();" style="color:white;text-decoration:none;display:none">首页</a>&amp;nbsp;&amp;nbsp;OADesigner&amp;nbsp;&amp;nbsp;<a href="/Produce/WeboaConfig.nsf/HomeForm?logout" style="color:white;text-decoration:">注销</a></div></div>
+<!--表单开始-->
+<div class="DB_PAGE">
+<div class="DB_SET" id="flowoption" style="display:">
+<div style="float:left;magrin:0 10px;">
+<div class="DB_SET_TD" id="tdNext" style="float:left;width:70px;cursor:hand;display:none"><a href="javascript:docApprove(&apos;submit&apos;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/NEXT.gif" border="0" /><font id="fontNext" /></a></div>
+<div class="DB_SET_TD" id="tdReturn" style="float:left;width:70px;cursor:hand;display:none"><a href="javascript:docApprove(&apos;reject&apos;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/fanhui.gif" border="0" /><font id="fontReturn" /></a></div>
+<div class="DB_SET_TD" id="tdQuit" style="float:left;width:70px;cursor:hand"><a href="javascript:quitApprove()"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/close.gif" border="0" /><font id="fontQuit" /></a></div>
+<div class="DB_SET_TD" id="tdSenor" style="float:left;width:70px;cursor:hand;display:none"><a href="javascript:showMoreOption(&apos;moreoption&apos;);"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/mor.gif" border="0" /><font id="fontSenor" /></a></div>
+</div>
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tbody><tr id="moreoption" style="display:none"><td colspan="4">
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tbody><tr><td class="DB_SET_TD" style="width:25%;cursor:hand;display:none" id="td_JQ"><a href="#" onclick="SubmitFlowDoc(&quot;append&quot;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/NEXT.gif" border="0" /><font id="font_JQ" /></a></td><td class="DB_SET_TD" style="width:20%;cursor:hand;display:none" id="td_ZB"><a href="#" onclick="SubmitFlowDoc(&quot;zb&quot;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/banli.png" border="0" /><font id="font_ZB" /></a></td><td class="DB_SET_TD" style="width:20%;cursor:hand;display:none" id="td_TZ"><a href="#" onclick="SubmitFlowDoc(&quot;msgto&quot;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/NEXT.gif" border="0" /><font id="font_TZ" /></a></td><td class="DB_SET_TD" style="width:35%;cursor:hand;display:none" id="td_FHJQ"><a href="#" onclick="SubmitFlowDoc(&quot;fhjq&quot;)"><img src="/DF_Res/DF_Style_Source/DF_Style_Mobile/img/NEXT.gif" border="0" /><font id="font_FHJQ" /></a></td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+<div class="DB_TABLE">
+
+
+
+
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" width="100%" style="display:none"><tbody><tr><td style="background:#CCC;height:30px;" colspan="2">请填写审批意见：<span id="mindInfoSpanID" /></td></tr><tr><td colspan="2">
+<textarea name="FlowMindInfo" onblur="if(this.value == " this.value="" onfocus="if(this.value == " 请在此填写审批意见="请在此填写审批意见" style="width:99%;height:50px;" id="FlowMindInfo" rows="7" cols="50">请在此填写审批意见</textarea>
+</td></tr><tr id="idMsgTitle"><td style="background:#CCC;width:90px">消息标题：</td><td style="background:#CCC">
+<input name="msgtitle" value="" style="width:98%" id="msgtitle" /></td></tr></tbody></table>
+<div class="DB_TITLE" id="apptitleinfo">请休假申请</div>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:white;" id="applycontent" />
+
+
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;display:none" id="tabSelectPsnID"><tbody><tr><td style="background:#CCC;height:30px;" colspan="2">下一环节处理人:</td></tr><tr><td class="DB_SP_LEFT" width="20%"><font style="font-size:14px">处理人</font>：</td><td class="DB_SP_RIGHT" width="30%">
+<input name="SelectPsnCN" value="" class="Mobile_ReadOnly_Style" style="width:50%" id="SelectPsnCN" />
+<span onclick="document.all(&apos;btSelUser&apos;).onclick();return false;"><img src="/DF_Res/DF_Img_Source/Img_YY/renyuan.gif" style="border:0" />选择</span>
+<span onclick="document.all(&apos;btDelUser&apos;).onclick();return false;"><img src="/DF_Res/DF_Img_Source/Img_YY/cancel.gif" style="border:0" />清除</span>
+  
+<input type="button" onclick="DF_SelectPsnForMobile({FieldName:" selectpsn="SelectPsn" selectmode="selectMode" name="selectMode" val="val" value="选择" style="display:none" id="btSelUser" />
+<input type="button" onclick="document.all(" selectpsncn="SelectPsnCN" value="清除" document.all="document.all" selectpsnen="SelectPsnEN" selectpsn="SelectPsn" style="display:none" id="btDelUser" />
+<input name="SelectPsnEN" value="" style="display:none" />
+<input name="SelectPsn" value="" style="display:none" /></td></tr></tbody></table>
+<!--FCK正文-->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:white;" id="applycontentFCK" />
+
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px;display:"><tbody><tr><td style="background:#CCC;height:30px">附件信息:</td></tr><tr><td class="DB_SP_RIGHT" id="attachinfo" style="font-size:15px">无附件</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" width="100%" style="margin-top:10px;display:"><tbody><tr id="curNodeInfoTitleID"><td style="background:#CCC;height:30px;">当前环节信息:</td></tr><tr id="curNodeInfoID"><td id="curflowinfo" /></tr><tr><td style="background:#CCC;height:30px">
+流转意见：<span style="cursor:pointer;color:blue" onclick="showFlowMindInfo(&apos;html_flowmindinfo&apos;)" id="spanFlowInfo">点击显示审批意见</span></td></tr><tr><td id="html_flowmindinfo" style="display:none" /></tr><tr><td style="height:30px;" /></tr><tr style="display:none1"><td style="background:#CCC;height:30px">
+流程图：<span style="cursor:pointer;color:blue" onclick="ShowFlowMap();return;">点击显示流程图</span></td></tr></tbody></table>
+</div>
+</div>
+</div>
+<div style="display:none" id="hideFieldInfo" />
+<input name="$$HTMLFrontMatter" type="hidden" value="" /><input name="appserver" type="hidden" value="oaappprd.nipponpaint.com.cn" />
+<input name="appdbpath" type="hidden" value="HR/LeaveApp.nsf" />
+<input name="appformname" type="hidden" value="LeaveApplyForm" />
+<input name="appdocunid" type="hidden" value="A677A02C47DE001E48257BB2003457D5" />
+<input name="apptype" type="hidden" value="msg" />
+<input name="CurUserITCode" type="hidden" value="OADesigner" />
+<input name="CurUserDeptID" type="hidden" value="" />
+<input name="CurUserNameCN" type="hidden" value="OADesigner" />
+<input name="CurUserDeptName" type="hidden" value="" />
+<input name="CurUserNumber" type="hidden" value="" />
+<input name="CurUserLoginDate" type="hidden" value="07/24/2013 05:53:33 PM" />
+<input name="RtfFieldInfo" type="hidden" value="" /><textarea name="rtfmobilertfDtableTra" /><textarea name="rtfmobilertfDtable"><table id="tblListB" class="DF_XTable_Style" width="100%"><tbody><tr jquery1374658227015="56"><td class="DF_XTable_Title_TD_Style" width="5%" jquery1374658227015="58"><q id="DF_030">序号</q></td><td class="DF_XTable_Title_TD_Style" width="8%" jquery1374658227015="59"><q id="DF_031">开始日期</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="60"><q id="DF_032">开始时间</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="61"><q id="DF_033">结束日期</q></td><td class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="62"><q id="DF_034">结束时间</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="63"><q id="DF_033">消息文本</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="64"><q id="DF_034">时间数据的文档编号</q></td><td style="DISPLAY: none" class="DF_XTable_Title_TD_Style" width="7%" jquery1374658227015="65"><q id="DF_034">休假小时</q></td></tr><tr class="DF_XTable_TR_Style" jquery1374658227015="57"><td class="DF_XTable_TD_Style" jquery1374658227015="66"><input type="checkbox" />1</td><td class="DF_XTable_TD_Style" align="middle" jquery1374658227015="67">2013-07-24</td><td class="DF_XTable_TD_Style" jquery1374658227015="68" /><td class="DF_XTable_TD_Style" align="middle" jquery1374658227015="69">2013-07-25</td><td class="DF_XTable_TD_Style" jquery1374658227015="70" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="71" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="72" /><td style="DISPLAY: none" class="DF_XTable_TD_Style" jquery1374658227015="73" /></tr></tbody></table></textarea>&quot;&gt;</div></div></form>
+
+
+<data-params><issucceed>true</issucceed><statuscode>200</statuscode><headers><param name="Server" value="Lotus-Domino" /><param name="Date" value="Wed, 24 Jul 2013 09:53:35 GMT" /><param name="Last-Modified" value="Wed, 24 Jul 2013 09:53:33 GMT" /><param name="Expires" value="Tue, 01 Jan 1980 06:00:00 GMT" /><param name="Content-Type" value="text/html; charset=UTF-8" /><param name="Content-Length" value="24600" /><param name="Cache-control" value="no-cache" /></headers><redirects /><usertoken><storeid>3682d796543f40f395dc8b6d693a5d50</storeid><userid /><username /><authority>false</authority><cookies><cookie name="LtpaToken" domain=".nipponpaint.com.cn" path="/">AAECAzUxRUZBMDI3NTFFRkE3MkZDTj1PQURlc2lnbmVyL089TlBDaGluYaU0TgtSssB7kG0m1CXqsZt0vOWL</cookie></cookies></usertoken><message><protocal>http</protocal><url>http://oamobprd.nipponpaint.com.cn/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/npchina&amp;appdbpath=DFMessage/dfmsg_oadesigner.nsf&amp;appdocunid=483D6CFAC99DF35648257BB20034764F</url><method>get</method><encoding>utf-8</encoding><type>remote</type><source>oamobprd.nipponpaint.com.cn</source><template>digi/mobile/content.xsl</template><params><param key="openform" name="openform" value="" /><param key="appdbpath" name="appdbpath" value="DFMessage/dfmsg_oadesigner.nsf" /><param key="login" name="login" value="" /><param key="appdocunid" name="appdocunid" value="483D6CFAC99DF35648257BB20034764F" /><param key="apptype" name="apptype" value="msg" /><param key="appserver" name="appserver" value="OAMSGPRD/npchina" /></params></message></data-params></alltextarea.length></body></html>

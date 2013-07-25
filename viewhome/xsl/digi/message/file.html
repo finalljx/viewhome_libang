@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html>
+	<head></head>
+	<body>
+		<div id="file" data-role="page" class="type-home">
+			<div data-role="header" data-position="fixed">
+				<a data-icon="home" data-role="button" onclick="$.mobile.changePage($.mobile.urlHistory.getPrev().url,{reverse: false, changeHash: true});">返回</a>
+				<h1>附件查看</h1>
+			</div>
+			<div data-role="content" align="center" style="margin:0px;padding:0px;">
+				<div id="imgtitle" style="width:100%;background-color:white;" align="center">
+				</div>
+				<div style="width:100%" align="center" style="margin:0;padding:0;">
+					<img id="imgcontent" src="" style="width:100%;"/>
+				</div>
+				<script>
+					var isshowed = false;
+					var total = 0;
+					var currentPage = 0;
+					var path = "";
+					$(document).delegate("#file", "pageshow", function(){
+						if(false == isshowed){
+							$.mobile.showPageLoadingMsg();
+							isshowed = true;
+							path = action.getpath();
+							if(path != ''){
+								if(path.indexOf('http://')!=0 && path.indexOf('/')!=0){
+									var url = $.mobile.urlHistory.getPrev().url;
+									path = url.substring(0, url.lastIndexOf('/')+1) + path;
+								}
+								$.ajax({
+									type: "get", url:path, data:null, dataType: "text",
+									success: function(response){
+										total = response.substring(6);
+										currentPage = 1;
+										changeimg();
+									},
+									error:function(response){
+										alert("错误:"+response.responseText);
+									}
+								});
+
+							}
+						}
+					});
+					function changeimg(){
+						$("#imgtitle").html("第"+currentPage+"页/共" + total + "页");
+						if(path.indexOf('?')==-1){
+							$("#imgcontent").attr("src", path + "?data-page=" + currentPage+"&data-cache=true").one('load',function(){$.mobile.hidePageLoadingMsg();});
+						}else{
+							$("#imgcontent").attr("src", path + "&data-page=" + currentPage+"&data-cache=true").one('load',function(){$.mobile.hidePageLoadingMsg();});
+						}
+					}
+					function prewpage(){
+						if(currentPage > 1){
+							$.mobile.showPageLoadingMsg();
+							currentPage = currentPage - 1;
+							changeimg();
+						}
+					}
+					function nextpage(){
+						if(currentPage < total){
+							$.mobile.showPageLoadingMsg();
+							currentPage = currentPage + 1;
+							changeimg();
+						}
+					}
+				</script>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div data-role="navbar">
+					<ul>
+						<li><a data-iconpos="top" data-icon="arrow-l" href="javascript:void(0);" onclick="prewpage();"></a></li>
+						<li><a data-iconpos="top" data-icon="arrow-r" href="javascript:void(0);" onclick="nextpage();"></a></li>
+					</ul>
+				</div>
+			</div><!-- /footer -->
+		</div>
+	</body>
+</html>

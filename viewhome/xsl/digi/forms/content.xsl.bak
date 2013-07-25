@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+	<xsl:output method="html" indent="yes"/>
+	<xsl:template match="/">
+		<html lang="zh_cn">
+			<head></head>
+			<body>
+				<div id="notice" data-role="page">
+					<div data-role="header" data-position="fixed">
+						<a data-icon="home" data-role="button" data-rel="back" data-direction="reverse">返回</a>
+						<h1>消息内容</h1>
+					</div><!-- /header -->
+					<div data-role="content" align="center">
+						http://182.50.2.171:8000/<xsl:value-of select="//input[@name='StMsgDB']/@value"/>/0/<xsl:value-of select="//input[@name='StMsgParentId']/@value"/>?opendocument%26login
+					</div><!-- /content -->
+				</div>
+			</body>
+		</html>
+	</xsl:template>
+</xsl:stylesheet>
