@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<html><head><title>错误</title></head><body text="#000000">
-
-
-
-<h1>错误编号为 401</h1>您没有执行此操作的权限
-
-<data-params><issucceed>true</issucceed><statuscode>401</statuscode><headers><param name="Server" value="Lotus-Domino" /><param name="Date" value="Wed, 24 Jul 2013 09:59:44 GMT" /><param name="Expires" value="Tue, 01 Jan 1980 06:00:00 GMT" /><param name="Content-Type" value="text/html; charset=GB2312" /><param name="Content-Length" value="188" /><param name="WWW-Authenticate" value="Negotiate" /><param name="Cache-control" value="no-cache" /><param name="Connection" value="Keep-Alive" /></headers><redirects /><usertoken><storeid>00000000000000000000000000000000</storeid><userid /><username /><authority>false</authority><cookies /></usertoken><message><protocal>http</protocal><url>http://oaappprd.nipponpaint.com.cn/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent&amp;random=0.7423645288217813</url><method>post</method><encoding>utf-8</encoding><type>remote</type><source>oaappprd.nipponpaint.com.cn</source><template>digi/todosnum.xsl</template><params>yes^~^app|8|vwTaskUnDoneForMobile|vwTaskUnDoneForMobile^~^msg|5|msgByDateDownUnRdView|msgByDateDownRdView^~^flowinfo|5|FlowUndoView|FlowDoneView</params></message></data-params></body></html>
