@@ -29,6 +29,10 @@
 				
 			</head>
 			<body>
+				<style>
+							a{text-decoration:none;}
+							.ddd { list-style:none;}
+				</style>
 				<div id="notice" data-role="page">
 					<div data-role="content" align="center">
 		
@@ -101,8 +105,7 @@
 	<xsl:variable name="sub">rtfmobile<xsl:value-of select="@name"/></xsl:variable>
 			<xsl:choose>
 				<xsl:when test="@type='table'">				
-					<div style='text-align:center;'><xsl:value-of select="@title" /></div>
-					<div style='padding-left:10px;'><xsl:apply-templates select="//textarea[@name=$sub]" mode="bx"/></div>
+					<div id="divTable" style='padding-left:10px;'><xsl:apply-templates select="//textarea[@name=$sub]" mode="bx"/></div>
 				</xsl:when>
 				<xsl:when test="@id='MTTABLE'">
 					<li data-role="list-divider"><xsl:value-of select="@title" /></li>
@@ -218,11 +221,11 @@
 		<xsl:if test="position()=1">		
 		<xsl:apply-templates  mode="bx"/>	
 		</xsl:if>
-	</xsl:template>	
+	</xsl:template>
 
 	<xsl:template match="table" mode="bx" >	
 		<xsl:apply-templates  mode="bx"/>	
-	</xsl:template>	
+	</xsl:template>
 	
 	<xsl:template match="tbody" mode="bx" >	
 		<xsl:apply-templates  mode="bx"/>	
@@ -231,16 +234,32 @@
 	 <xsl:template match="tr" mode="bx" >
 		<xsl:variable name="num" select="position()"/>
 
-		  <xsl:if test="$num!=1">
-			<xsl:apply-templates  mode="bx"/><hr/>
+		<xsl:if test="$num!=1">
+			<ul style="margin-left: -47;">
+				<xsl:apply-templates  mode="bx"/><hr/>
+			</ul>
 		 </xsl:if>
+		 
 	</xsl:template>
 
-	 <xsl:template match="td" mode="bx" >
-		<xsl:variable name="n" select="position()"/>
-		<xsl:value-of select="translate(../../tr[1]/td[$n],'*','')"/>:
-		<xsl:apply-templates  mode="bx"/>
-		<br/>
+	<xsl:template match="td" mode="bx">
+		<!-- 2012-12-9 不显示隐藏的属性 武红宇 -->
+		<xsl:variable name="n" select="position()" />
+		<li class="ddd" style="margin-bottom: -17;"  >
+		<xsl:value-of select="translate(../../tr[1]/td[$n],'*','')" />
+		:
+			<xsl:variable name="tableVal" select="text()" />
+			<xsl:if test="$tableVal='A'">
+				同意
+			</xsl:if>
+			<xsl:if test="$tableVal='B'">
+				拒绝
+			</xsl:if>
+			<xsl:if test="$tableVal!='A' and $tableVal!='B'">
+				<xsl:value-of select="$tableVal"/>
+			</xsl:if>
+		</li>
+		<br />
 	</xsl:template>
 	
 	<xsl:template match="input" mode="bx">

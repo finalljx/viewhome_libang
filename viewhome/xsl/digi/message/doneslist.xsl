@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:import href="/xsl/pub/scriptCss.xsl" />	
+	<xsl:import href="/xsl/pub/scriptCss.xsl" />	
 	<xsl:variable name="start"><xsl:value-of select="//input[@name='start']/@value"/></xsl:variable>
 	<xsl:variable name="count"><xsl:value-of select="//input[@name='count']/@value"/></xsl:variable>
 	<xsl:variable name="total"><xsl:value-of select="//input[@name='total']/@value"/></xsl:variable>
@@ -12,26 +12,31 @@
 	<xsl:template match="/">
 		<html>
 			<head>							
+				
 				<xsl:apply-imports/>
+
 				<script>
 					$(document).ready(function(){
 						var hori=$.hori;
 						/*设置标题*/
-						hori.setHeaderTitle("未读消息");
+						hori.setHeaderTitle("已办列表");
 
 					});
 				</script>
-				
+					
 				<script>
 					var npage = 1;
 					var ncount = 20;
 					function fetch(){
-						$.hori.showLoading();
+					$.hori.showLoading();
 						
 						npage = npage+1;
 						var itcode = "<xsl:value-of select='substring-before(substring-after(//url/text(), "dfmsg_"), ".nsf")'/>";
-						var url = "/view/oa/messagesublist/Produce/DigiFlowMobile.nsf/agGetMsgViewData?openagent&amp;login&amp;0.6922244625974296&amp;server=oadev/Dawning=&amp;dbpath=DFMessage/dfmsg_"+itcode+".nsf&amp;view=vwMsgRdForMobile&amp;thclass=&amp;page="+npage+"&amp;count="+ncount;
+						var url = "/view/oamobile/messagesubreadlist/Produce/DigiFlowMobile.nsf/agGetViewData?openagent&amp;login&amp;0.6922244625974295&amp;server=OAMSGPRD/NPChina&amp;dbpath=DFMessage/dfmsg_"+itcode+".nsf&amp;view=vwTaskRdForMobile&amp;thclass=&amp;page="+npage+"&amp;count="+ncount+"&amp;pageFrom=homepage"
+
+
 						
+
 						$.ajax({
 							type: "get", url: url,
 							success: function(response){
@@ -56,11 +61,11 @@
 						<script>
 							function changepage(url){
 								//$.mobile.changePage(url, {changeHash:true, type: "post"});
-								window.location.reload();
 								$.hori.loadPage(url);
-							}
+							}							
 						</script>
-						<ul data-role="listview" data-inset="true">							
+						<ul data-role="listview" data-inset="true">
+
 							<xsl:apply-templates select="//viewentry" />
 							<xsl:if test="count(//viewentry)=0">
 								<li><a>无内容</a></li>
@@ -83,14 +88,8 @@
 	</xsl:template>
 	
 	<xsl:template match="viewentry">
-		<xsl:variable name="appdbsvr"><xsl:value-of select="substring-after(substring-before(entrydata[4]/., ']]'), 'CDATA[')"/></xsl:variable>
-		<xsl:variable name="appdbpath"><xsl:value-of select="substring-after(substring-before(entrydata[5]/., ']]'), 'CDATA[')"/></xsl:variable>
-		<xsl:variable name="appformname"><xsl:value-of select="substring-after(substring-before(entrydata[6]/., ']]'), 'CDATA[')"/></xsl:variable>
-		
-		<xsl:variable name="specialxslid">messagecontent</xsl:variable>
-		
 		<li>
-			<a href="javascript:void(0);" onclick="changepage('/view/oa/{$specialxslid}/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=oadev/Dawning&amp;appdbpath=DFMessage/dfmsg_{substring-before(substring-after(//param[@key='dbpath']/@value, 'dfmsg_'), '.nsf')}.nsf&amp;appdocunid={@unid}')" data-icon="arrow-r" data-iconpos="right">
+			<a href="javascript:void(0);" onclick="changepage('/view/oamobile/messagecontent/Produce/DigiFlowMobile.nsf/showform?openform&amp;login&amp;apptype=msg&amp;appserver=OAMSGPRD/NPChina&amp;appdbpath=DFMessage/dfmsg_{substring-before(substring-after(//param[@key='dbpath']/@value, 'dfmsg_'), '.nsf')}.nsf&amp;appdocunid={@unid}')" data-icon="arrow-r" data-iconpos="right">
 				<xsl:if test="contains(entrydata[2]/.,'CDATA[')">
 					<h3><xsl:value-of select="substring-before(substring-after(entrydata[2]/.,'CDATA['), ']]')"/></h3>
 					<p>

@@ -68,14 +68,26 @@
 		function inittodos(){
 			// var icount=0;
 			if (icount!=gcount){
-				var url = "/view/oa/todosnum/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent&random="+Math.random();
+				var url = "/view/oamobile/todosnum/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent&random="+Math.random();
 				$.ajax({
 					type: "POST", url: url, data:'data-xml=yes^~^app|8|vwTaskUnDoneForMobile|vwTaskUnDoneForMobile^~^msg|5|msgByDateDownUnRdView|msgByDateDownRdView^~^flowinfo|5|FlowUndoView|FlowDoneView', dataType: "text", cache:false,
 					success: function(response){
+						if($.trim(response)==""){
+							try{
+								alert("会话过期，请重新登录");
+								var serverUrl = "";
+								var componentURL = serverUrl+"/view/Resources/Login.scene.xml";
+								$.hori.loadPage(serverUrl+"/view/Resources/login.html",componentURL);
+								return;
+							}catch(e){alert(e.message);}
+							
+						}
 						$("#spanTodo").html(response);
+						$.hori.hideLoading();
 					},
 					error:function(response){
 						alert("错误:"+response.responseText);
+						$.hori.hideLoading();
 					}
 				});
 				icount= gcount;
@@ -87,7 +99,7 @@
 			
 			
 
-			var url = "/view/oa/unreadnum/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent&random="+Math.random();
+			var url = "/view/oamobile/unreadnum/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent&random="+Math.random();
 			$.ajax({
 				type: "POST", url: url, data:'data-xml=yes^~^app|8|vwTaskUnDoneForMobile|vwTaskUnDoneForMobile^~^msg|5|vwMsgUnRdForMobile|vwMsgUnRdForMobile^~^flowinfo|5|FlowUndoView|FlowDoneView', dataType: "text", cache:false,
 				success: function(response){
@@ -191,6 +203,13 @@
 			}
 			
 		});
+
+		function refreshHome(){
+			$.hori.showLoading();
+			gcount=gcount+1;
+			inittodos();
+			initUnreads();
+		}
 		
 		</script>
 		<style>
@@ -229,28 +248,44 @@
                         <span style="color:#434343"><strong>未读消息</strong></span>
 						<span id="spanUnread" class="bubble-count ui-btn-up-c ui-btn-corner-all">0</span>
                     </div>
-				   <div class="ui-block-c">
+				   
+					<div class="ui-block-c">
+						<a href="javascript:void(0);" onclick="refreshHome()">
+							<img id="imgUnread" width="68" height="68" src="/view/png/sugon/refresh_new.png" />
+						</a>
+	                    <br/>
+	                    <span style="color:#434343"><strong>刷新首页</strong></span>
+					
+                	</div>
+                </div>
+                <br/>
+				<div class="ui-grid-b">
+                     <div class="ui-block-a">
+						<a href="javascript:void(0);" onclick="$.hori.showLoading();$.hori.loadPage(encodeURI('/view/oamobile/messagedone/Produce/DigiFlowMobile.nsf/agGetMsgViewData?openagent&login&server=OAMSGPRD/NPChina&dbpath=DFMessage/dfmsg_<%=request.getParameter("itcode")%>.nsf&view=vwTaskRdForMobile&thclass=&page=1&count=20&pageFrom=homepage'))">
+							<img id="imgUnread" width="68" height="68" src="/view/png/sugon/task_doneNew.png" />
+						</a>
+	                    <br/>
+	                    <span style="color:#434343"><strong>已办列表</strong></span>
+					
+                	</div>
+
+                	<div class="ui-block-b">
 						<a href="javascript:void(0);" onclick="$.hori.showLoading();$.hori.loadPage(encodeURI('/view/oamobile/messagereadlist/Produce/DigiFlowMobile.nsf/agGetMsgViewData?openagent&login&0.6922244625974295&server=OAMSGPRD/npchina&dbpath=DFMessage/dfmsg_<%=request.getParameter("itcode")%>.nsf&view=vwMsgRdForMobile&thclass=&page=1&count=20&pageFrom=homepage'))">
 							<img width="68" height="68" src="/view/png/sugon/wdxx.png" />
 						</a>
                         <br/>
                         <span style="color:#434343"><strong>已读消息</strong></span>
                     </div>
-					
-                </div>
-                <br/>
-				<div class="ui-grid-b">
                      
-					<div class="ui-block-a" id="divMail" >
+					<div class="ui-block-b" id="divMail" >
 						<a href="javascript:void(0);" onclick="openmail()">
 							<img width="68" height="68" src="/view/png/sugon/gryj.png">
 						</a>
                         <br/>
                         <span style="color:#434343"><strong>个人邮件</strong></span>    
                     </div>
-                   
+               
                 </div>
-				<br/>
 
                
 				

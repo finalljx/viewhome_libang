@@ -35,7 +35,7 @@
 								//username = encodeURI(escape(username));
 								//showLoading();
 								$.mobile.showPageLoadingMsg();
-								var url = "/view/oa/operationsearch/Produce/DigiFlowMobile.nsf/SearchPsnAgent?openagent&searchKey="+username;
+								var url = "/view/oamobile/operationsearch/Produce/DigiFlowMobile.nsf/SearchPsnAgent?openagent&searchKey="+username;
 								$.ajax({
 									type: "get", url: url,
 									success: function(response){

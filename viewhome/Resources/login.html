@@ -97,6 +97,13 @@
 			}	
 			function login(){
 				var username = $.trim($("#username").val());
+
+				var num =username.indexOf("@");
+				
+				if(num != "-1"){
+					username = username.substring(username,num);
+				}
+
 				var password = $("#password").val();
 				if(username == ""){
 					alert("请输入用户名!");

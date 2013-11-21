@@ -4,11 +4,7 @@
 	
 	<xsl:variable name="appdbpath"><xsl:value-of select="//input[@name='appdbpath']/@value"/></xsl:variable>
 	<xsl:variable name="appformname"><xsl:value-of select="//input[@name='appformname']/@value"/></xsl:variable>
-	<xsl:variable name="jscriptpath"><xsl:value-of select="//input[@name='jscriptpath']/@value"/></xsl:variable>
-	<xsl:variable name="NodeCanJQ"><xsl:value-of select="//fieldentries/fieldentry[@id='NodeCanJQ']"/></xsl:variable>
-	<xsl:variable name="extendAgent"><xsl:value-of select="//input[@name='UseFlowWSName']/@value"/></xsl:variable>
-
-
+	
 	<xsl:output method="html" indent="yes"/>
 	<xsl:template match="/">
 		<html lang="zh_cn">
@@ -23,7 +19,6 @@
 						var hori=$.hori;
 						/*设置标题*/
 						hori.setHeaderTitle("单据");
-						evalExtendJavaScript();
 					});
 				</script>
 	
@@ -37,7 +32,6 @@
 							$("#div_DTblHtml").html( dxTblhtml ).trigger('create');
 						}
 					});
-
 				</script>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			</head>
@@ -73,7 +67,7 @@
 										$("#FlowMindInfo").val("拒绝！")
 									}
 								}
-								//alert(FlowMindInfo);
+								//alert(FlowMindInfo)；
 								
 								//将回车变为换行
 								FlowMindInfo = FlowMindInfo.replace(/\n/g," ");
@@ -99,18 +93,13 @@
 								}
 								
 								var UseFlowWS = $("#isUseFlowWS").val();
-								//alert(UseFlowWS);
 								
-								//if(UseFlowWS=="yes" && value=="submit"){
-								if(UseFlowWS=="yes"){
+								if(UseFlowWS=="yes" && value=="submit"){
 									FlowBackTraceForWS(value);
 									return;
 								}
-								//后台扩展代理
-
-								var extendAgent=$("#extendAgent").val();
 								
-								var soap = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'><SOAP-ENV:Body><m:bb_dd_GetDataByView xmlns:m='http://sxg.bbdd.org' SOAP-ENV:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'><db_ServerName xsi:type='xsd:string'>"+appserver+"</db_ServerName><db_DbPath xsi:type='xsd:string'>"+appdbpath+"</db_DbPath><db_DocUID xsi:type='xsd:string'>"+appdocunid+"</db_DocUID><db_UpdInfo xsi:type='xsd:string'></db_UpdInfo><db_OptPsnID xsi:type='xsd:string'>"+CurUserITCode+"</db_OptPsnID><db_TempAuthors xsi:type='xsd:string'></db_TempAuthors><db_MsgTitle xsi:type='xsd:string'></db_MsgTitle><db_ToNodeId xsi:type='xsd:string'>"+toNodeId+"</db_ToNodeId><db_Mind xsi:type='xsd:string'>"+FlowMindInfo+"</db_Mind><db_OptType xsi:type='xsd:string'>"+value+"</db_OptType><db_AppAgentName xsi:type='xsd:string'>"+extendAgent+"</db_AppAgentName></m:bb_dd_GetDataByView></SOAP-ENV:Body></SOAP-ENV:Envelope>";
+								var soap = "<SOAP-ENV:Envelope xmlns:SOAP-ENV='http://schemas.xmlsoap.org/soap/envelope/' xmlns:SOAP-ENC='http://schemas.xmlsoap.org/soap/encoding/' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema'><SOAP-ENV:Body><m:bb_dd_GetDataByView xmlns:m='http://sxg.bbdd.org' SOAP-ENV:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'><db_ServerName xsi:type='xsd:string'>"+appserver+"</db_ServerName><db_DbPath xsi:type='xsd:string'>"+appdbpath+"</db_DbPath><db_DocUID xsi:type='xsd:string'>"+appdocunid+"</db_DocUID><db_UpdInfo xsi:type='xsd:string'></db_UpdInfo><db_OptPsnID xsi:type='xsd:string'>"+CurUserITCode+"</db_OptPsnID><db_TempAuthors xsi:type='xsd:string'></db_TempAuthors><db_MsgTitle xsi:type='xsd:string'></db_MsgTitle><db_ToNodeId xsi:type='xsd:string'>"+toNodeId+"</db_ToNodeId><db_Mind xsi:type='xsd:string'>"+FlowMindInfo+"</db_Mind><db_OptType xsi:type='xsd:string'>"+value+"</db_OptType></m:bb_dd_GetDataByView></SOAP-ENV:Body></SOAP-ENV:Envelope>";
 								$.mobile.showPageLoadingMsg();
 								var url = "/view/oa/request/Produce/ProInd.nsf/THFlowBackTraceAgent?openagent&login";
 								//var url2 = "/view/oa/request/Produce/DigiFlowMobileHome.nsf/DF_FlowBackTrace?openagentlogin&userId="+CurUserITCode+"&appdbpath="+appdbpath+"&appdocunid="+appdocunid;
@@ -133,6 +122,8 @@
 							}
 
 							function submit(value){
+							
+								
 								if(value=="reject"){
 									var refuse = $("#TFCurNodeRefuseToFlag").val();
 									/*
@@ -155,34 +146,13 @@
 									if($("#toflownodeid")){
 										toflownodeid = $("#toflownodeid").val();
 									}
-									//alert(value);
+									
 									post(value, toflownodeid);
 								}
 							}
 							function advanced(){
 								$( "#popupBasic" ).popup( "open" );
 							}
-
-							function evalExtendJavaScript(){
-								var jsurl2 = $("#jsurl").val();	
-								var extendJsPath=  $("#extendJsPath").val();
-								var url= jsurl2;
-							
-								if(extendJsPath && extendJsPath!=""){
-									$.ajax({
-										  url: url,
-										  dataType: 'text',
-										  success: function(res){
-												
-												$.globalEval(res);	
-												mobileInit();											
-										  }
-									})
-								}
-						
-							}
-	
-
 						]]>
 						</script>
 						
@@ -202,12 +172,11 @@
 								<a data-role="button" value="reject" onclick="submit('reject');" data-mini='true' data-theme="f">拒 绝</a>
 								</xsl:if>
 							</div>
-							
-							<div class="ui-block-c" style="padding-bottom:5px;" align="center" id="td_JQ">
+							<div class="ui-block-c" style="padding-bottom:5px;" align="center">
 								
 									<!-- <input name="appdbpath" type="hidden" value="Application/expenses.nsf" />  -->
-									<!-- 开始和结束环节 隐藏-->
-									<xsl:if test="//input[contains(@name, 'appdbpath')]/@value !='Application/expenses.nsf' and //input[@name='TFCurNodeID']/@value !='FlowStartNode'">
+
+									<xsl:if test="//input[contains(@name, 'appdbpath')]/@value !='Application/expenses.nsf'">
 										<a href="/view/oa/operationjq/Produce/DigiFlowMobile.nsf/frmselectpsn?OpenForm&amp;login&amp;selectMode=radio&amp;FieldName=TFTempAuthors&amp;FieldNameCN=TFTempAuthorsCN&amp;FieldNameEN=TFTempAuthorsEN&amp;GroupFlag=no&amp;SelectOrgID=&amp;OptFieldName=&amp;callback=SubmitFlowDoc_JQ" data-rel="page" data-role="button" data-mini='true' data-theme="f">加 签</a>
 									</xsl:if>
 							</div>
@@ -224,7 +193,7 @@
 
 						
 					
-						<h3 style="font-size:16px; margin-top:7px;"><xsl:value-of select="//title/text()"/></h3>
+						<h3><xsl:value-of select="//title/text()"/></h3>
 
 						<div style="display:none">
 							<table>
@@ -264,7 +233,7 @@
 								<li>
 									<xsl:if test="//textarea[@name='FlowMindInfo']">
 										<table style="border:0;padding:0;margin:0;" width="100%" border="0">
-											<tr style="width:100%;display:none" >
+											<tr style="width:100%">
 												<td style="width:70%" align="left">
 													
 												</td>
@@ -336,12 +305,6 @@
 						<xsl:apply-templates select="//input[@type='hidden' or not(@type)]" mode="hidden"/>
 					</div><!-- /content -->
 				</div>
-				<input name="jsurl" id="jsurl" type="hidden" value="/view/oamobile/{$jscriptpath}?data-type=text" /> 
-				<input id="extendJsPath" type="hidden" value="{$jscriptpath}" />
-				
-				<input id="NodeCanJQ"  name="NodeCanJQ" type="hidden"  value="{$NodeCanJQ}" >  </input>
-
-				<input id="extendAgent"  name="" type="hidden"  value="{$extendAgent}" >  </input>
 			</body>
 		</html>
 	</xsl:template>
@@ -620,35 +583,35 @@
 	 <xsl:template match="tr" mode="bx" >
 		<xsl:variable name="num" select="position()"/>
 
-		<xsl:if test="$num!=1">
-			<ul style="margin-left: -47;">
+		 <xsl:if test="$num!=1">
+			<ul>
 				<xsl:apply-templates  mode="bx"/><hr/>
 			</ul>
 		 </xsl:if>
 		 
 	</xsl:template>
 
-	<xsl:template match="td" mode="bx">
-		<!-- 2012-12-9 不显示隐藏的属性 武红宇 -->
-		<xsl:variable name="n" select="position()" />
-		<li class="ddd" style="margin-bottom: -17;"  >
-		<xsl:value-of select="translate(../../tr[1]/td[$n],'*','')" />
-		:
-			<xsl:variable name="tableVal" select="text()" />
-			<xsl:if test="$tableVal='A'">
-				同意
-			</xsl:if>
-			<xsl:if test="$tableVal='B'">
-				拒绝
-			</xsl:if>
-			<xsl:if test="$tableVal!='A' and $tableVal!='B'">
-				<xsl:value-of select="$tableVal"/>
-			</xsl:if>
-		</li>
-		<br />
+	 <xsl:template match="td" mode="bx" >
+		<!-- 2012-12-9 不显示隐藏的属性   武红宇 -->
+			<xsl:variable name="n" select="position()"/>
+			<li class="ddd"><xsl:value-of select="translate(../../tr[1]/td[$n],'*','')"/>:
+			<xsl:apply-templates  mode="bx"/></li>
+			<br/>
 	</xsl:template>
 
+	<xsl:template match="select" mode="bx">
+			<xsl:apply-templates mode="bx" />
+	</xsl:template>
+
+	<xsl:template match="option" mode="bx">
+		<xsl:if test="contains(@selected, 'selected')">
+			<xsl:apply-templates mode="bx" />
+		</xsl:if>
+	</xsl:template>
 	
+	<xsl:template match="input" mode="bx">
+		<xsl:value-of select="translate(@value,'?readOnly','')"/>
+	</xsl:template>
 
 
 	<xsl:template match="input" mode="hidden">

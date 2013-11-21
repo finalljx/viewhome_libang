@@ -38,6 +38,7 @@
 								dataArr.push("<db_MsgTitle>"+msgTitle+"</db_MsgTitle>");
 								dataArr.push("<db_SelectPsn>"+selectPsn+"</db_SelectPsn>");
 								dataArr.push("<db_OptType>"+optType+"</db_OptType>");
+
 								var dataXML	= "<allData>"+dataArr.join("")+"</allData>";
 								
 								/*
@@ -61,7 +62,6 @@
 									data:encodeURI(dataXML),
 									async:true,
 									success:function(responseTxt){ 
-												
 												var Obj = JSON.parse(responseTxt);
 												
 												//移除遮罩
@@ -84,7 +84,7 @@
 													//根据操作栏显示的内容进行提示
 													if (sInfo.indexOf("退回成功")!=-1){
 														
-														sInfo = document.getElementById("fontReturn").innerText+"成功！"
+														sInfo = Obj.textinfo;
 													}
 
 												}

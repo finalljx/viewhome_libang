@@ -168,6 +168,8 @@
 			<rule mode="replace" regex="&amp;amp;#55;" value="7"/>
  			<rule mode="replace" regex="&amp;amp;#8226;" value="*"/>
         </view>
+        <!-- 已办事宜 -->
+		<view id="dones" template="digi/doneslist.xsl" encoding="utf-8"/>
 		<view id="messagerouting" template="digi/message/routing.xsl"/>
 
 
@@ -337,6 +339,9 @@
 		
 		<view id="messagesublist" template="digi/message/sublist.xsl" encoding="utf-8"/>
 		
+		<!-- 已办事宜 -->
+		<view id="messagedone" template="digi/message/doneslist.xsl" encoding="utf-8"/>
+		
 		<view id="messagesubreadlist" template="digi/message/subreadlist.xsl" encoding="utf-8"/>
 		<view id="messagecontent" template="digi/message/content.xsl" encoding="utf-8">
 		 
@@ -352,6 +357,7 @@
 			<rule mode="replace" regex="9 " value="9&#160;"/>
 			
 			<rule mode="replace" regex="approver=" value="approver='"/>
+			<rule mode="replace" regex="approver=''" value="approver='"/>
 			<rule mode="replace" regex=" approveren=" value="' approveren='"/>
 			<rule mode="replace" regex=" approvetime=" value="' approvetime="/>
 
